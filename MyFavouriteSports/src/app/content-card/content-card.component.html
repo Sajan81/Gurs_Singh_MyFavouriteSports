@@ -1,0 +1,4 @@
+@for (item of contentList.content; track item.id) {
+    <div>
+    <div [innerHTML]="contentList.getContentAtIndex(contentList.content.indexOf(item))"></div>
+  </div> }
