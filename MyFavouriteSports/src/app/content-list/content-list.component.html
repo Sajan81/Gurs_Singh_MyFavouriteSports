@@ -1,2 +1,82 @@
-<app-content-card *ngFor="let item of contentArray; first as isFirst;" [ngStyle]="{'border': '3px solid black','background-color':'red','width':'500px'}" [content]="item" class="card-container">
-</app-content-card>
+<!-- <div>
+    <label>Search Here</label>
+    <input type="text" [(ngModel)]="inputValue">
+    <button (click)="search(inputValue)">Search</button>
+    <h3 *ngIf="typePresent" style="color: green;">This game is present in the list.</h3>
+    <h3 *ngIf="!typePresent && typePresent!=undefined" style="color: red;"> This game is not present in the list.</h3>
+  </div>
+ 
+  <div class="card-container1">
+    <h2>Items with no type :</h2>
+  <div *ngFor="let item of contentArray | contentTypeFilter" class="card1">
+  <!-- Display no type item details here 
+  <p class="title1">{{ item.title }}</p>
+  <p>{{ item.description }}</p>
+  <p>Creator: {{ item.creator }}</p>
+  <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
+  </div>
+  </div>
+   
+  <div class="card-container2">
+  <div *ngFor="let item of contentArray | contentTypeFilter:'Indoor'" class="card2">
+      <!-- Display item details here
+      <h2>Items with type 'Indoor':</h2>
+      <p class="title2">{{ item.title }}</p>
+      <p>{{ item.description }}</p>
+      <p>Creator: {{ item.creator }}</p>
+      <p>Type: {{ item.type }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    </div>
+  </div>
+  <h2>Items with type 'Digital':</h2>
+  <div class="card-container3">
+   
+    <div *ngFor="let item of contentArray | contentTypeFilter:'Digital'" class="card3">
+      <!-- Display item details here
+      <p class="title3">{{ item.title }}</p>
+      <p>{{ item.description }}</p>
+      <p>Creator: {{ item.creator }}</p>
+      <p>Type: {{ item.type }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    </div>
+  </div> -->
+  <div class="search-container">
+    <label class="search-label">Search Here</label>
+    <input type="text" [(ngModel)]="inputValue" class="search-input">
+    <button (click)="search(inputValue)" class="search-button">Search</button>
+    <h3 *ngIf="typePresent" class="success-text">This game is present in the list.</h3>
+    <h3 *ngIf="!typePresent && typePresent != undefined" class="error-text">This game is not present in the list.</h3>
+  </div>
+  
+  <div class="item-container no-type">
+    <h2>Items with no type :</h2>
+    <div *ngFor="let item of contentArray | contentTypeFilter" class="item-card no-type-card">
+      <p class="title">{{ item.title }}</p>
+      <p class="description">{{ item.description }}</p>
+      <p class="creator">Creator: {{ item.creator }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    </div>
+  </div>
+  
+  <div class="item-container indoor">
+    <h2>Items with type 'Indoor':</h2>
+    <div *ngFor="let item of contentArray | contentTypeFilter:'Indoor'" class="item-card indoor-card">
+      <p class="title">{{ item.title }}</p>
+      <p class="description">{{ item.description }}</p>
+      <p class="creator">Creator: {{ item.creator }}</p>
+      <p class="type">Type: {{ item.type }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    </div>
+  </div>
+  <div class="card-container">  
+  <div class="item-container digital">
+    <h2>Items with type 'Digital':</h2>
+    <div *ngFor="let item of contentArray | contentTypeFilter:'Digital'" class="item-card digital-card">
+      <p class="title">{{ item.title }}</p>
+      <p class="description">{{ item.description }}</p>
+      <p class="creator">Creator: {{ item.creator }}</p>
+      <p class="type">Type: {{ item.type }}</p>
+      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+    </div>
+  </div>
+</div>
