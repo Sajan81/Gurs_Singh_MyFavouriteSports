@@ -1,65 +1,70 @@
-/* Search container styles */
+/* General styles */
 .search-container {
-    margin-bottom: 20px;
-  }
-  
-  .search-label {
-    font-size: 16px;
-    margin-right: 10px;
-  }
-  
-  .search-input {
-    padding: 8px;
-    font-size: 14px;
-  }
-  
-  .search-button {
-    padding: 8px 15px;
-    font-size: 14px;
-    background-color: #4caf50;
-    color: #fff;
-    cursor: pointer;
-  }
-  
-  /* Item container styles */
-  .item-container {
-    margin-bottom: 30px;
-  }
-  
-  .item-card {
-    border: 1px solid #ccc;
-    padding: 15px;
-    margin-bottom: 15px;
-  }
-  
-  .title {
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .description {
-    font-size: 14px;
-    color: #555;
-  }
-  
-  .creator {
-    font-size: 14px;
-    color: #777;
-  }
-  
-  .type {
-    font-size: 14px;
-    color: #2196f3;
-  }
-  
-  /* Image styles */
-  .item-image {
-    max-width: 600px;
-    height: 400px;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  
+  margin-bottom: 20px;
+}
 
-    
-  
+.item-container {
+  margin-bottom: 30px;
+}
+
+.item-card {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+img{
+  height: 600px;
+  width: 600px;
+}
+.title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.description {
+  margin-bottom: 10px;
+}
+
+.creator {
+  color: #888;
+}
+
+/* Specific styles for each type */
+.no-type-card {
+  background-color: #f0f0f0;
+}
+
+.indoor-card {
+  background-color: #e6f7ff;
+}
+
+.digital-card {
+  background-color: #e6e6e6;
+}
+
+/* Hover effect styles using HoverAffect directive */
+p[HoverAffect] {
+  transition: all 0.3s ease;
+}
+
+/* Success and error text styles */
+.success-text {
+  color: green;
+}
+
+.error-text {
+  color: red;
+}
+
+/* Button styles */
+.search-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #45a049;
+}

@@ -11,12 +11,9 @@ export class ContentListComponent {
 
   name : string | undefined;
    contentArray: Content[] = [];
-   logContentInfo(id: string, title: string) {
-    console.log("Content ID:", id);
-    console.log("Content Title:", title);
-  }
   typePresent:boolean | undefined;
   inputValue:string='';
+  defaultImageUrl:string="https://www.simplyrecipes.com/thmb/yFqFfLR03QG0cuAi5WgUSYPrh8Y=/5762x0/filters:no_upscale():max_bytes(150000):strip_icc()/Simply-Recipes-Perfect-Cheesecake-LEAD-6-97a8cb3a60c24903b883c1d5fb5a69d3.jpg";
   
   
   constructor(){
@@ -77,10 +74,10 @@ export class ContentListComponent {
       },
       { 
         id: 7, 
-        title: 'Salwar-Suit', 
+        title: 'Carrom', 
         description: 'Description for Content 3', 
         creator: 'Creator 3', 
-        imgURL: 'https://images.unsplash.com/photo-1628867578021-c2eaad2ce46c?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kb29yJTIwZ2FtZXN8ZW58MHx8MHx8fDA%3D', 
+        imgURL: '', 
         type: 'Indoor', 
         tags: ['Tag5', 'Tag6'] 
       },

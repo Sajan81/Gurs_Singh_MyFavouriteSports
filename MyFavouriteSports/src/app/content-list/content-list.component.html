@@ -1,45 +1,3 @@
-<!-- <div>
-    <label>Search Here</label>
-    <input type="text" [(ngModel)]="inputValue">
-    <button (click)="search(inputValue)">Search</button>
-    <h3 *ngIf="typePresent" style="color: green;">This game is present in the list.</h3>
-    <h3 *ngIf="!typePresent && typePresent!=undefined" style="color: red;"> This game is not present in the list.</h3>
-  </div>
- 
-  <div class="card-container1">
-    <h2>Items with no type :</h2>
-  <div *ngFor="let item of contentArray | contentTypeFilter" class="card1">
-  <!-- Display no type item details here 
-  <p class="title1">{{ item.title }}</p>
-  <p>{{ item.description }}</p>
-  <p>Creator: {{ item.creator }}</p>
-  <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
-  </div>
-  </div>
-   
-  <div class="card-container2">
-  <div *ngFor="let item of contentArray | contentTypeFilter:'Indoor'" class="card2">
-      <!-- Display item details here
-      <h2>Items with type 'Indoor':</h2>
-      <p class="title2">{{ item.title }}</p>
-      <p>{{ item.description }}</p>
-      <p>Creator: {{ item.creator }}</p>
-      <p>Type: {{ item.type }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    </div>
-  </div>
-  <h2>Items with type 'Digital':</h2>
-  <div class="card-container3">
-   
-    <div *ngFor="let item of contentArray | contentTypeFilter:'Digital'" class="card3">
-      <!-- Display item details here
-      <p class="title3">{{ item.title }}</p>
-      <p>{{ item.description }}</p>
-      <p>Creator: {{ item.creator }}</p>
-      <p>Type: {{ item.type }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    </div>
-  </div> -->
   <div class="search-container">
     <label class="search-label">Search Here</label>
     <input type="text" [(ngModel)]="inputValue" class="search-input">
@@ -54,7 +12,13 @@
       <p class="title">{{ item.title }}</p>
       <p class="description">{{ item.description }}</p>
       <p class="creator">Creator: {{ item.creator }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+      
+      <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold', }">Tags :{{ item.tags }}</p>
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+    </ng-template>
+
     </div>
   </div>
   
@@ -64,19 +28,29 @@
       <p class="title">{{ item.title }}</p>
       <p class="description">{{ item.description }}</p>
       <p class="creator">Creator: {{ item.creator }}</p>
-      <p class="type">Type: {{ item.type }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+
+      <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
+    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold'}">Tags :{{ item.tags }}</p>
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+    </ng-template>
+
     </div>
   </div>
-  <div class="card-container">  
   <div class="item-container digital">
     <h2>Items with type 'Digital':</h2>
     <div *ngFor="let item of contentArray | contentTypeFilter:'Digital'" class="item-card digital-card">
       <p class="title">{{ item.title }}</p>
       <p class="description">{{ item.description }}</p>
       <p class="creator">Creator: {{ item.creator }}</p>
-      <p class="type">Type: {{ item.type }}</p>
-      <img *ngIf="item.imgURL" [src]="item.imgURL" alt="{{ item.title }} Image" class="item-image" />
+
+      <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
+    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold', }">Tags :{{ item.tags }}</p>
+    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" /> 
+    <ng-template #defaultImage>
+      <img [src]="defaultImageUrl" alt="Default Image" />
+
+    </ng-template>
     </div>
-  </div>
 </div>
