@@ -8,49 +8,21 @@
   
   <div class="item-container no-type">
     <h2>Items with no type :</h2>
-    <div *ngFor="let item of contentArray | contentTypeFilter" class="item-card no-type-card">
-      <p class="title">{{ item.title }}</p>
-      <p class="description">{{ item.description }}</p>
-      <p class="creator">Creator: {{ item.creator }}</p>
-      
-      <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold', }">Tags :{{ item.tags }}</p>
-    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-    </ng-template>
-
-    </div>
+    <app-content-card *ngFor="let item of contentArray | contentTypeFilter" class="item-card no-type-card" [item]="item"> </app-content-card>
+ 
   </div>
   
   <div class="item-container indoor">
     <h2>Items with type 'Indoor':</h2>
-    <div *ngFor="let item of contentArray | contentTypeFilter:'Indoor'" class="item-card indoor-card">
-      <p class="title">{{ item.title }}</p>
-      <p class="description">{{ item.description }}</p>
-      <p class="creator">Creator: {{ item.creator }}</p>
-
-      <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
-    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold'}">Tags :{{ item.tags }}</p>
-    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" />
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-    </ng-template>
-
-    </div>
+    <app-content-card *ngFor="let item of contentArray | contentTypeFilter:'Indoor'" class="item-card indoor-card" [item]="item"> </app-content-card>
+      
   </div>
+
   <div class="item-container digital">
     <h2>Items with type 'Digital':</h2>
-    <div *ngFor="let item of contentArray | contentTypeFilter:'Digital'" class="item-card digital-card">
-      <p class="title">{{ item.title }}</p>
-      <p class="description">{{ item.description }}</p>
-      <p class="creator">Creator: {{ item.creator }}</p>
+    <app-content-card *ngFor="let item of contentArray | contentTypeFilter:'Digital'" [item]="item">
+    </app-content-card>
 
-      <p HoverAffect [hoverStyle]="{ 'textDecoration': 'underline' }">Type: {{ item.type }}</p>
-    <p HoverAffect [hoverStyle]="{ 'fontWeight': 'bold', }">Tags :{{ item.tags }}</p>
-    <img *ngIf="item.imgURL; else defaultImage" [src]="item.imgURL" alt="{{ item.title }} Image" /> 
-    <ng-template #defaultImage>
-      <img [src]="defaultImageUrl" alt="Default Image" />
-
-    </ng-template>
-    </div>
+  
+   
 </div>
