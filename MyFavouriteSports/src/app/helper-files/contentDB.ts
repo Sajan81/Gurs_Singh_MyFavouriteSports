@@ -47,8 +47,8 @@ export const contentDB =[
     { 
       id: 6, 
       title: 'Football', 
-      description: 'Description for Content 3', 
-      creator: 'Creator 3', 
+      description: 'Description for Content 6', 
+      creator: 'Creator 6', 
       imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Football_in_Bloomington%2C_Indiana%2C_1995.jpg/1200px-Football_in_Bloomington%2C_Indiana%2C_1995.jpg', 
       type: '', 
       tags: ['Tag5', 'Tag6'] 

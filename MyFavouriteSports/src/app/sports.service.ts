@@ -14,7 +14,7 @@ export class SportsService {
   
 
   getContent(): Observable<any[]> {
-    this.messageService.add("Content array loaded!");
+    this.messageService.add("Content array is loaded successfully!");
 
     return of (contentDB);
   }
@@ -24,10 +24,6 @@ export class SportsService {
     return this.getContent().pipe(
       map(contentArray => contentArray.find(content => content.id === id))
     );
-  }
+  
 
-  getSingleContentById(id: number): Observable<any> {
-    return this.getContent().pipe(
-      map(contentArray => contentArray.find(content => content.id === id))
-    );
-}}
+  }}
